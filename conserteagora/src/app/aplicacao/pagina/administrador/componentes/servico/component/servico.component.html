@@ -1,0 +1,77 @@
+<div id="servico" class="block">
+    <header>
+        <h3>Serviço</h3>
+        <form>
+            <fieldset>
+                <label>
+                    <input id="searche" name="search" type="search" placeholder="Buscar grupo"
+                        [(ngModel)]="nomeServico" />
+                </label>
+                <label>
+                    <button pTooltip="Pesquisar" (click)="buscarPorNome()">
+                        <i class="far fa-filter"></i>
+                    </button>
+                </label>
+                <button>
+                    <i class="far fa-search"></i>
+                </button>
+                <label>
+                    <button pTooltip="Incluir novo grupo" (click)="incluirRegistro()">
+                        <i class="pi pi-plus"></i>
+                    </button>
+                </label>
+            </fieldset>
+        </form>
+    </header>
+    <section>
+        <ng-container *ngFor="let item of servicos">
+            <article>
+                <h2>{{item.nome}}</h2>
+                <p>{{item.descricao}}</p>
+                <span class="price">
+                    <label>
+                        <button pTooltip="Editar grupo" tooltipPosition="left" (click)="editarRegistro(item)">
+                            <i class="pi pi-pencil"></i>
+                        </button>
+                    </label>
+                    <label>
+                        <button pTooltip="Excluir grupo" tooltipPosition="left" (click)="excluirRegistro(item)">
+                            <i class="pi pi-times"></i>
+                        </button>
+                    </label>
+                </span>
+            </article>
+        </ng-container>
+    </section>
+</div>
+
+<p-confirmDialog #cd header="Exclusão do registro" icon="pi pi-exclamation-triangle">
+    <p-footer>
+        <button type="button" pButton icon="pi pi-times" label="Não" (click)="cd.reject()"></button>
+        <button type="button" pButton icon="pi pi-check" label="Sim" (click)="cd.accept()"></button>
+    </p-footer>
+</p-confirmDialog>
+
+<p-dialog [header]="header" [(visible)]="displayModal" [style]="{width: '60%'}">
+    <main id="wrapper">
+        <section>
+            <label>
+                <strong>Nome</strong>
+                <input id="idNomeRegistro" name="nomeRegistro" type="text" [(ngModel)]="registro.nome" />
+            </label>
+            <label>
+                <strong>Descrição</strong>
+                <input id="idDescricaoRegistro" name="descricaoRegistro" type="text" [(ngModel)]="registro.descricao" />
+            </label>
+            <label>
+                <strong>Grupo</strong>
+                <!-- <input id="idDescricaoRegistro" name="descricaoRegistro" type="text" [(ngModel)]="registro.grupo" /> -->
+                <p-dropdown appendTo="body" [options]="listGrupo" [(ngModel)]="registro.grupo" optionLabel="label"
+                    optionValue="value"></p-dropdown>
+            </label>
+            <label>
+                <input type="submit" value="Ok" (click)="verificarAlteracao()" />
+            </label>
+        </section>
+    </main>
+</p-dialog>

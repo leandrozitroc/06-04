@@ -1,0 +1,85 @@
+<div id="servico" class="block">
+    <header>
+        <h3>Valor do serviço</h3>
+        <form action=".">
+            <fieldset>
+                <label>
+                    <input id="search" name="search" type="search" placeholder="Buscar por taxa" [(ngModel)]="search" />
+                </label>
+                <label>
+                    <button pTooltip="Pesquisar" (click)="buscarPorTaxa()">
+                        <i class="far fa-filter"></i>
+                    </button>
+                </label>
+                <label>
+                    <button pTooltip="Incluir novo grupo" (click)="incluirRegistro()">
+                        <i class="pi pi-plus"></i>
+                    </button>
+                </label>
+                <i class="far fa-search"></i>
+            </fieldset>
+        </form>
+    </header>
+    <section>
+        <ng-container *ngFor="let item of taxas">
+            <article>
+                <h2>{{item.servico.nome}}</h2>
+                <h2>R$ {{item.valor}} | {{item.percentual}}%</h2>
+                <span class="price">
+                    <label>
+                        <button pTooltip="Editar grupo" tooltipPosition="left" (click)="editarRegistro(item)">
+                            <i class="pi pi-pencil"></i>
+                        </button>
+                    </label>
+                    <label>
+                        <button pTooltip="Excluir grupo" tooltipPosition="left" (click)="excluirRegistro(item)">
+                            <i class="pi pi-times"></i>
+                        </button>
+                    </label>
+                </span>
+            </article>
+        </ng-container>
+    </section>
+</div>
+
+<p-confirmDialog #cd header="Excluir registro" icon="pi pi-exclamation-triangle">
+    <p-footer>
+        <button type="button" pButton icon="pi pi-times" label="Não" (click)="cd.reject()"></button>
+        <button type="button" pButton icon="pi pi-check" label="Sim" (click)="cd.accept()"></button>
+    </p-footer>
+</p-confirmDialog>
+
+<p-dialog [header]="header" [(visible)]="displayModal" [style]="{width: '60%'}">
+    <main id="wrapper">
+        <section>
+            <label>
+                <strong>Valor total</strong>
+                <p-inputNumber id="idValorRegistro" name="valorRegistro" type="text" mode="currency" currency="BRL"
+                    locale="pt-BR" [minFractionDigits]="2" [(ngModel)]="registro.valor" (onBlur)="calcularValorPago()">
+                </p-inputNumber>
+            </label>
+            <label>
+                <strong>Porcentagem</strong>
+                <p-inputNumber id="idPercentualRegistro" name="percentualRegistro" type="text" prefix="%" locale="pt-BR"
+                    [minFractionDigits]="2" [(ngModel)]="registro.percentual" (onBlur)="calcularValorPago()">
+                </p-inputNumber>
+            </label>
+            <label>
+                <strong>Valor pago ao profissional</strong>
+                <p-inputNumber id="idPercentualRegistro" name="percentualRegistro" type="text" mode="currency"
+                    currency="BRL" locale="pt-BR" [disabled]="true" [minFractionDigits]="2"
+                    [(ngModel)]="registro.valorPago">
+                </p-inputNumber>
+            </label>
+            <label>
+                <strong>Serviço</strong>
+                <!-- <input id="idDescricaoRegistro" name="descricaoRegistro" type="text" [(ngModel)]="registro.grupo" /> -->
+                <p-dropdown appendTo="body" [options]="listServico" [(ngModel)]="registro.servico" optionLabel="label"
+                    optionValue="value"></p-dropdown>
+            </label>
+            <label>
+                <input type="submit" value="Ok" (click)="verificarAlteracao()" />
+            </label>
+        </section>
+    </main>
+</p-dialog>

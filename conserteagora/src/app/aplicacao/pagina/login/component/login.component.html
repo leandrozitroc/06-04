@@ -1,0 +1,81 @@
+<mat-card class="header mat-elevation-z6">
+  <span>
+      <a routerLink = '/'>
+          <img class='logo' src="assets/img/logo.svg" alt="logo">
+      </a>
+  </span>
+
+  <span class="sociais">
+      <label class="escrito">
+
+        Sigam nossas <br>
+        redes sociais
+      </label>
+     <a>
+      <i class="fab fa-facebook-f"></i>
+
+
+     </a>
+     <a>
+      <i class="fab fa-instagram"></i>
+
+      </a>
+      <a>
+        <i class="fab fa-twitter"></i>
+
+      </a>
+
+
+  </span>
+
+</mat-card>
+
+
+<div class="container">
+
+
+
+  <div id="services" class="block">
+
+              <mat-card class="card1 mat-elevation-z5">
+                <mat-card-content id="login" class="block">
+                    <small>Bem-vindo ao</small>
+                    <h1>Fix Soluções</h1>
+                    <p>Faça seu login para acessar nosso app</p>
+                    <form action="." class="form">
+                        <fieldset>
+                            <label>
+                                <strong>Login</strong>
+                                <input id="usuariologin" name="usuariologin" type="text" placeholder="Login do usuário" [(ngModel)]="usuario.login" />
+                                <i class="fal fa-user"></i>
+                            </label>
+                            <label class='senha'>
+                                <strong>Senha</strong>
+                                <input class="textsenha" id="senha" name="senha" type="password" placeholder="Digite aqui sua senha" [(ngModel)]="usuario.senha" />
+                                <sub>
+                                    <a href="/trocar-senha" title="Esqueceu a senha?">
+                                        Esqueceu a senha?
+                                    </a>
+                                </sub>
+                                <i class="fal fa-lock-alt"></i>
+                            </label>
+                            <label class="lbsubmit">
+                                <button (click)="realizarLogin()">Acessar <i class="fal fa-arrow-right"></i></button>
+                            </label>
+                        </fieldset>
+                    </form>
+                    <span>
+                      <a href="/cadastro" title="Não possui cadastro? Clique aqui.">
+                          Não possui cadastro? Clique aqui.
+                      </a>
+                  </span>
+              </mat-card-content>
+              </mat-card>
+
+  </div>
+</div>
+<div>
+  <footer id="footer" class="block">
+    <p>Copyright &copy; Fix Soluções 2021. Todos os direitos reservados</p>
+  </footer>
+</div>

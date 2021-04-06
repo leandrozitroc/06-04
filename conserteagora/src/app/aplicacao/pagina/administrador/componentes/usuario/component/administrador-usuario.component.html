@@ -1,0 +1,113 @@
+<div id="servico" class="block">
+    <header>
+        <h3>Cadastrar {{title}}</h3>
+        <form>
+            <fieldset>
+                <label>
+                    <input id="search" name="search" type="search" placeholder="Buscar por usuário" [(ngModel)]="search" />
+                </label>
+                <label>
+                    <button pTooltip="Pesquisar" (click)="buscar()">
+                        <i class="far fa-filter"></i>
+                    </button>
+                </label>
+                <button>
+                    <i class="far fa-search"></i>
+                </button>
+                <label>
+                    <button pTooltip="Incluir novo usuario" (click)="incluirRegistro()">
+                        <i class="pi pi-plus"></i>
+                    </button>
+                </label>
+            </fieldset>
+        </form>
+    </header>
+    <section>
+        <ng-container *ngFor="let item of usuarios">
+            <article>
+                <h2>{{item.txt_nome}}
+                    <ng-container *ngIf="!item.fl_ativo">
+                        (USUARIO BLOQUEADO)
+                    </ng-container>
+                </h2>
+                <p>{{item.txt_email}}</p>
+                <span class="price">
+                    <label>
+                        <button pTooltip="Editar usuario" tooltipPosition="left" (click)="editarRegistro(item)">
+                            <i class="pi pi-pencil"></i>
+                        </button>
+                    </label>
+                    <label *ngIf="item.fl_ativo">
+                        <button pTooltip="Bloquear usuario" tooltipPosition="left" (click)="bloquearRegistro(item)">
+                            <i class="pi pi-times"></i>
+                        </button>
+                    </label>
+                    <label *ngIf="!item.fl_ativo">
+                        <button pTooltip="Desbloquear usuario" tooltipPosition="left" (click)="desbloquearRegistro(item)">
+                            <i class="pi pi-check"></i>
+                        </button>
+                    </label>
+                </span>
+            </article>
+        </ng-container>
+    </section>
+</div>
+
+<p-confirmDialog #cd header="Excluir registro" icon="pi pi-exclamation-triangle">
+    <p-footer>
+        <button type="button" pButton icon="pi pi-times" label="Não" (click)="cd.reject()"></button>
+        <button type="button" pButton icon="pi pi-check" label="Sim" (click)="cd.accept()"></button>
+    </p-footer>
+</p-confirmDialog>
+
+<p-dialog [header]="header" [(visible)]="displayModal" [style]="{width: '60%'}">
+    <main id="wrapper">
+        <section>
+            <label>
+                <strong>Nome</strong>
+                <input id="idNomeUsuario" name="nomeUsuario" type="text" [(ngModel)]="registro.txt_nome" />
+            </label>
+            <label>
+                <strong>Data de nascimento</strong>
+                <p-calendar id="dtNomeUsuario" name="dtNomeUsuario" type="text"
+                    dateFormat="dd/mm/yy" [(ngModel)]="registro.dtNascimento">
+                </p-calendar>
+            </label>
+            <label>
+                <strong>CPF</strong>
+                <p-inputMask id="cpfNomeUsuario" name="cpfNomeUsuario" type="text"
+                    unmask="true" mask="999.999.999-99" [(ngModel)]="registro.txt_cpf" >
+                </p-inputMask>
+            </label>
+            <label>
+                <strong>Endereço</strong>
+                <input id="idEnderecoUsuario" name="enderecoUsuario" type="text"
+                    [(ngModel)]="registro.txt_endereco" />
+            </label>
+            <label>
+                <strong>Telefone</strong>
+                <p-inputMask id="idTelefoneUsuario" name="telefoneUsuario" type="text"
+                    unmask="true" mask="(99) 99999-9999" [(ngModel)]="registro.txt_telefone">
+                </p-inputMask>
+            </label>
+            <label>
+                <strong>Login/E-mail</strong>
+                <input id="idEmailUsuario" name="emailUsuario" type="text"
+                    [(ngModel)]="registro.txt_email" />
+            </label>
+            <label>
+                <strong>Senha provisória</strong>
+                <input id="idEmailUsuario" name="emailUsuario" type="password"
+                    [(ngModel)]="registro.txt_senha" />
+            </label>
+            <label>
+                <strong>Confirma senha provisória</strong>
+                <input id="idEmailUsuario" name="emailUsuario" type="password"
+                    [(ngModel)]="registro.confirmarSenha" />
+            </label>
+            <label>
+                <input type="submit" value="Ok" (click)="verificarAlteracao()" />
+            </label>
+        </section>
+    </main>
+</p-dialog>

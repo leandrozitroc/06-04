@@ -1,0 +1,194 @@
+/* base */
+body { background-color: var(--lightblue); }
+body.login { background-color: #fff; }
+
+/* header */
+#header { position: relative; height: 86px; }
+#header span.toggle { position: absolute; top: 50%; left: 20px; width: 42px; height: 42px; background-color: #fff; border-radius: 12px; box-shadow: 0px 3px 6px rgba(0,0,0,.1); transform: translateY(-50%); cursor: pointer; transition: all .5s ease; }
+#header span.toggle b { position: absolute; top: 50%; left: 50%; width: 20px; height: 20px; border-top: 3px solid var(--black); transform: translate(-50%, -50%); transition: all .5s ease; }
+#header span.toggle b::before { position: absolute; top: 4px; left: 0px; width: 100%; height: 3px; background-color: var(--black); transition: all .5s ease; content: ''; }
+#header span.toggle b::after { position: absolute; top: 11px; left: 0px; width: 80%; height: 3px; background-color: var(--black); transition: all .5s ease; content: ''; }
+#header span.toggle.on { background-color: var(--egg); }
+#header span.toggle.on b { border-top-color: transparent; }
+#header span.toggle.on b::before { top: 4px; transform: rotate(45deg); }
+#header span.toggle.on b::after { top: 4px; width: 100%; transform: rotate(-45deg); }
+#header .right { float: right; width: auto; margin: 12px 20px 0px 0px; }
+#header .right span, #header .right figure { display: inline-block; width: auto; vertical-align: middle; }
+#header .right span a { margin-right: 20px; font-size: 24px; color: var(--black); }
+#header .right figure img { display: block; width: 60px; height: 60px; border-radius: 100%; border: 3px solid #fff; object-fit: cover; }
+
+/* login */
+#login { padding: 40px 10px; }
+#login::before { position: absolute; top: -80px; right: -100px; width: 180px; height: 180px; background: transparent url('../img/profissional-header-lines.svg') no-repeat; background-size: contain; content: ''; }
+#login header span.logo img { float: left; width: 130px; height: auto; }
+#login section { display: inline-block; width: 100%; height: auto; margin-top: 48px; }
+#login section h1 { display: block; margin: 7px 0px; font-weight: bold; font-size: 26px; }
+#login section p { display: block; color: var(--light); }
+#login fieldset { display: inline-block; width: 100%; height: auto; margin-top: 32px; }
+#login fieldset label { position: relative; display: inline-block; width: 100%; height: 50px; margin-bottom: 16px; border-bottom: 1px solid var(--lightgray); }
+#login fieldset label strong { display: block; font-size: 12px; }
+#login fieldset label input[type=text],
+#login fieldset label input[type=password] { display: inline-block; width: 100%; height: 40px; padding-left: 20px; color: var(--black); font-weight: 600; }
+#login fieldset label ::placeholder { color: var(--black); }
+#login fieldset label sub a { display: block; margin-top: 10px; text-align: right; font-size: 13px; color: var(--gray); }
+#login fieldset label sub a:hover { text-decoration: underline; }
+#login fieldset label.lbsubmit { height: auto; margin-bottom: 0px; border-bottom: none; }
+#login fieldset label.lbsubmit button { display: block; width: 162px; height: 66px; margin: 20px auto 60px auto; background: transparent url('../img/profissional-login-submit.svg') no-repeat center center; background-size: contain; text-align: center; line-height: 66px; }
+#login fieldset label.lbsubmit button i { position: relative; top: auto; left: auto; display: inline-block; width: auto; margin-left: 5px; vertical-align: middle; transform: none; }
+#login fieldset label i { position: absolute; top: 65%; left: 0px; width: auto; transform: translateY(-50%); color: var(--gray); }
+#login footer span a { display: block; text-align: center; color: var(--black); }
+#login footer span a:hover { text-decoration: underline; }
+
+/* servico */
+#servico { display: inline-block; width: 100%; height: auto; min-height: calc(100vh - 86px); padding: 40px 20px; background-color: #fff; border-top-left-radius: 20px; border-top-right-radius: 20px; }
+#servico header { position: relative; display: inline-block; width: 100%; height: auto; }
+#servico header form { position: relative; display: inline-block; width: 100%; height: auto; }
+/* width: calc(100% - 48px) */
+#servico header form label input { display: inline-block; width: 100%; height: 40px; padding-left: 30px; background-color: var(--lightgray); vertical-align: middle; font-size: 12px; color: var(--black); }
+#servico header form label input::placeholder { color: var(--gray); }
+#servico header form label button { display: inline-block; width: 40px; height: 40px; margin-left: 3px; background-color: var(--black); color: #fff; font-size: 18px; text-align: center; line-height: 40px; border-radius: 10px; vertical-align: middle; }
+#servico header form i.fa-search { position: absolute; top: 50%; left: 10px; transform: translateY(-50%); }
+#servico header nav ul { display: inline-block; width: 100%; height: auto; margin-top: 40px; }
+#servico header nav ul li { float: left; width: 25%; height: auto; text-align: center; }
+#servico header nav ul li a { display: block; padding-bottom: 8px; text-transform: uppercase; line-height: 1.2; color: var(--black); }
+#servico header nav ul li.on a { font-weight: bold; border-bottom: 5px solid var(--egg); }
+#servico header.ok h6 { display: block; font-weight: 600; font-size: 24px; text-align: center; }
+#servico header.ok p { display: block; margin-top: 10px; text-align: center; font-size: 14px; }
+#servico section { display: inline-block; width: 100%; height: auto; margin-top: 20px; }
+#servico section article { position: relative; display: inline-block; width: 100%; height: auto; margin-bottom: 5px; padding: 10px; background-color: #fff; border: 1px solid #fff;; box-shadow: 0px 3px 20px rgba(0,0,0,.16); transition: all .5s ease; cursor: pointer; }
+#servico section article:hover, #servico section article.on { background-color: var(--yellow); border-color: var(--brown); }
+#servico section article h2 { display: block; margin-bottom: 10px; font-weight: bold; font-size: 20px; }
+#servico section article span.price { position: absolute; top: 10px; right: 10px; font-weight: bold; font-size: 20px; }
+#servico section article span.open { position: absolute; top: 10px; right: 10px; color: var(--brown); }
+#servico section article span.time { position: absolute; top: 10px; right: 10px; color: var(--brown); }
+#servico section article span.alert-info { position: absolute; top: 10px; right: 10px; padding: 10px; background-color: var(--red); color: #fff; font-size: 12px; text-transform: uppercase; }
+#servico section article span.date { display: inline-block; width: auto; font-size: 12px; }
+#servico section article span.type { display: inline-block; width: auto; font-size: 12px; }
+#servico section article span b { font-weight: 600; }
+#servico section article .details { display: none; float: left; width: 100%; height: auto; margin-top: 20px; }
+#servico section article .details b { display: block; margin-bottom: 15px; font-size: 14px; text-align: left; }
+#servico section article .details p { display: block; font-size: 12px; line-height: 1.4; }
+#servico section article .details span.description b { display: block; margin-bottom: 10px; font-weight: 600; }
+#servico section article .details span.description p { display: block; margin-bottom: 10px; line-height: 1.4; }
+#servico section article .details span.gallery nav ul { display: inline-block; width: 100%; height: auto; margin-bottom: 20px; }
+#servico section article .details span.gallery nav ul li { display: inline-block; width: auto; margin-right: 10px; vertical-align: top; }
+#servico section article .details span.gallery nav ul li img { display: block; width: 80px; height: 60px; object-fit: cover; box-shadow: 0px 3px 20px rgba(0,0,0,.25); border-radius: 10px; }
+#servico section article .details span.booking { display: block; margin: 20px 0px; text-align: center; }
+#servico section article .details span.booking small { display: inline-block; width: auto; margin: 0px 10px; }
+#servico section article .details span.booking small i { display: block; font-size: 24px; }
+#servico section article .details span.booking small em { display: block; margin: 8px 0px 4px 0px; font-size: 12px; color: var(--brown); font-style: normal; text-transform: uppercase; }
+#servico section article .details span.booking small strong { display: block; font-weight: bold; font-size: 14px; text-transform: uppercase; }
+#servico section article .details span.booking small sub { display: inline-block; margin-top: 10px; padding: 6px 20px; background-color: var(--brown); color: #fff; font-weight: bold; font-size: 14px; border-radius: 50px; }
+#servico section article .details span.booking p { text-align: left; }
+#servico section article .details span.actions small a { display: block; width: 100%; height: auto; margin-top: 5px; padding: 14px 0px; background-color: var(--black); color: #fff; font-weight: 600; text-align: center; border-radius: 3px; }
+#servico section article .details span.review { display: inline-block; width: 100%; height: auto; margin: 40px 0px 20px 0px; }
+#servico section article .details span.review figure { display: inline-block; width: auto; vertical-align: middle; }
+#servico section article .details span.review figure img { display: block; width: 44px; height: 44px; margin-right: 10px; border: 1px solid var(--black); border-radius: 100%; object-fit: cover; }
+#servico section article .details span.review strong { display: inline-block; font-weight: 500; }
+
+    /* servico -> notify */
+    #servico .notify { position: fixed; z-index: 1000; top: 100px; left: 50%; width: 300px; height: auto; padding: 40px 20px 40px 60px; background-color: var(--lightgray); transform: translateX(-50%); }
+    #servico .notify i { position: absolute; top: 40px; left: 20px; font-size: 24px; color: var(--brown); }
+    #servico .notify p { display: block; font-size: 12px; line-height: 1.4; }
+    #servico .notify small a { display: block; margin-top: 10px; text-align: right; color: var(--brown); font-weight: 600; font-size: 11px; }
+
+    /* servico -> alert */
+    #servico section.alert article:hover, #servico section.alert article.on { background-color: var(--lightred); border-color: var(--red); }
+    #servico section.alert article .details span.actions small a { background-color: var(--red); }
+
+    /* servico -> detalhes */
+    #servico-detalhes header { position: relative; display: inline-block; width: 100%; height: auto; margin-top: 40px; }
+    #servico-detalhes header figure { display: inline-block; width: auto; margin-right: 20px; vertical-align: middle; }
+    #servico-detalhes header figure img { display: block; width: 80px; height: 80px; border-radius: 100%; object-fit: cover; }
+    #servico-detalhes header figcaption { display: inline-block; width: calc(100% - 110px); vertical-align: middle; }
+    #servico-detalhes header figcaption h2 { display: block; font-weight: 600; font-size: 18px; }
+    #servico-detalhes header figcaption p { display: block; margin-top: 7px; font-size: 12px; }
+    #servico-detalhes header span.alert { position: absolute; top: -20px; right: 0px; width: auto; padding: 10px; background-color: var(--red); color: #fff; font-weight: 600; font-size: 12px; text-transform: uppercase; }
+    #servico-detalhes section .details { display: inline-block; width: 100%; height: auto; margin-top: 20px; }
+    #servico-detalhes section .details b { display: block; margin-bottom: 15px; font-weight: 600; font-size: 14px; text-align: left; }
+    #servico-detalhes section .details p { display: block; font-size: 12px; line-height: 1.4; }
+    #servico-detalhes section .details span.description b { display: block; margin-bottom: 10px; font-weight: 600; }
+    #servico-detalhes section .details span.description p { display: block; margin-bottom: 10px; line-height: 1.4; }
+    #servico-detalhes section .details span.gallery nav ul { display: inline-block; width: 100%; height: auto; margin-bottom: 20px; }
+    #servico-detalhes section .details span.gallery nav ul li { display: inline-block; width: auto; margin-right: 10px; vertical-align: top; }
+    #servico-detalhes section .details span.gallery nav ul li img { display: block; width: 80px; height: 60px; object-fit: cover; box-shadow: 0px 3px 20px rgba(0,0,0,.25); border-radius: 10px; }
+    #servico-detalhes section .details span.booking { display: block; margin: 20px 0px; text-align: center; }
+    #servico-detalhes section .details span.booking small { display: inline-block; width: auto; margin: 0px 10px; }
+    #servico-detalhes section .details span.booking small i { display: block; font-size: 24px; }
+    #servico-detalhes section .details span.booking small em { display: block; margin: 8px 0px 4px 0px; font-size: 12px; color: var(--brown); font-style: normal; text-transform: uppercase; }
+    #servico-detalhes section .details span.booking small strong { display: block; font-weight: bold; font-size: 14px; text-transform: uppercase; }
+    #servico-detalhes section .details span.booking small sub { display: inline-block; margin-top: 10px; padding: 6px 20px; background-color: var(--brown); color: #fff; font-weight: bold; font-size: 14px; border-radius: 50px; }
+    #servico-detalhes section .details span.booking p { text-align: left; }
+    #servico-detalhes section .details span.actions { display: inline-block; width: 100%; height: auto; margin-top: 20px; }
+    #servico-detalhes section .details span.actions small a { display: block; width: 100%; height: auto; margin-top: 5px; padding: 14px 0px; background-color: var(--black); color: #fff; font-weight: 600; text-align: center; border-radius: 3px; }
+    #servico-detalhes section .details span.actions small.cancel a { background-color: var(--gray); }
+    #servico-detalhes section .details span.actions label { position: relative; display: inline-block; width: 100%; height: auto; margin-top: 20px; padding-left: 30px; font-size: 14px; }
+    #servico-detalhes section .details span.actions label input { position: absolute; top: 0px; left: 0px; width: 20px; height: 20px; border-radius: 3px; border: 1px solid var(--gray); }
+    #servico-detalhes section .details span.actions label input:checked { background-color: var(--gray); }
+    #servico-detalhes section .details span.actions label input:checked::after { position: absolute; top: 50%; left: 50%; width: 5px; height: 5px; background-color: #fff; transform: translate(-50%, -50%); content: ''; }
+    #servico-detalhes section .details span.review { display: inline-block; width: 100%; height: auto; margin: 40px 0px 20px 0px; }
+    #servico-detalhes section .details span.review figure { display: inline-block; width: auto; vertical-align: middle; }
+    #servico-detalhes section .details span.review figure img { display: block; width: 44px; height: 44px; margin-right: 10px; border: 1px solid var(--black); border-radius: 100%; object-fit: cover; }
+    #servico-detalhes section .details span.review strong { display: inline-block; font-weight: 500; }
+    #servico-detalhes section .details span.price { display: inline-block; width: 100%; height: auto; margin: 10px 0px 20px 0px; }
+    #servico-detalhes section .details .budget label { position: relative; display: inline-block; width: 100%; height: auto; margin-bottom: 10px; }
+    #servico-detalhes section .details .budget label strong { display: block; margin-bottom: 10px; font-weight: 600; font-size: 14px; }
+    #servico-detalhes section .details .budget label strong sup { font-weight: bold; color: var(--red); }
+    #servico-detalhes section .details .budget label input { display: inline-block; width: 100%; height: 40px; padding: 0px 10px; background-color: var(--lightgray); color: var(--black); font-size: 12px; }
+    #servico-detalhes section .details .budget label textarea { display: inline-block; width: 100%; height: 140px; padding: 10px; background-color: var(--lightgray); color: var(--black); font-size: 12px; }
+    #servico-detalhes section .details .budget label i { position: absolute; bottom: 13px; right: 10px; }
+    #servico-detalhes section .details .budget .file { position: relative; display: inline-block; width: 100%; height: 40px; background-color: var(--lightgray); }
+    #servico-detalhes section .details .budget .file em { display: inline-block; width: 100%; height: auto; text-align: center; line-height: 40px; color: var(--red); font-style: normal; font-weight: 600; font-size: 12px; }
+    #servico-detalhes section .details .budget .file input { position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; opacity: 0; }
+    #servico-detalhes section .details .budget .file i { position: relative; bottom: auto; right: auto; }
+    #servico-detalhes section .details span.deadline { display: inline-block; width: 100%; height: auto; margin: 10px 0px 20px 0px; }
+    #servico-detalhes section .details span.deadline p { display: block; font-weight: 600; color: var(--red); }
+    #servico-detalhes section .details span.total { display: block; margin-top: 20px; text-align: right; }
+    #servico-detalhes section .details span.total b { margin-bottom: 5px; text-align: right; }
+    #servico-detalhes section .details span.total strong { font-weight: bold; font-size: 20px; }
+    #servico-detalhes section .details .review .line { display: inline-block; width: 100%; height: auto; margin-top: 15px; }
+    #servico-detalhes section .details .review .line strong { display: block; margin-bottom: 10px; font-weight: 600; font-size: 14px; }
+    #servico-detalhes section .details .review .line label { display: inline-block; width: auto; margin-right: 20px; font-size: 13px; color: var(--gray); cursor: pointer; }
+    #servico-detalhes section .details .review .line label input[type=radio] { position: relative; display: inline-block; width: 20px; height: 20px; margin: -2px 5px 0px 0px; border-radius: 3px; border: 1px solid var(--gray); vertical-align: middle; }
+    #servico-detalhes section .details .review .line label input:checked { background-color: var(--gray); }
+    #servico-detalhes section .details .review .line label input:checked::after { position: absolute; top: 50%; left: 50%; width: 5px; height: 5px; background-color: #fff; transform: translate(-50%, -50%); content: ''; }
+    #servico-detalhes section .details .review textarea { display: inline-block; width: 100%; height: 140px; margin-top: 20px; padding: 10px; background-color: var(--lightgray); color: var(--black); font-size: 12px; }
+    #servico-detalhes section .details .review input[type=submit] { display: block; width: 100%; height: auto; margin-top: 15px; padding: 14px 0px; background-color: var(--black); color: #fff; font-weight: 600; text-align: center; border-radius: 3px; }
+
+    /* profile */
+    #profile header#cover { position: relative; display: inline-block; width: 100%; height: 155px; margin-bottom: 80px; background-size: cover; background-position: center center; border-top-left-radius: 20px; border-top-right-radius: 20px; }
+    #profile header#cover figure img { position: absolute; bottom: -70px; left: 20px; width: 100px; height: 100px; object-fit: cover; border-radius: 100%; border: 2px solid #fff;; }
+    #profile header#cover figcaption { position: absolute; top: 170px; left: 140px; width: calc(100% - 155px); height: auto; }
+    #profile header#cover figcaption h2 { display: block; font-weight: 600; font-size: 20px; }
+    #profile header#cover figcaption p { display: block; margin-top: 7px; font-size: 14px; color: var(--gray); }
+    #profile b { display: block; margin-bottom: 10px; font-weight: 600; text-transform: uppercase; }
+    #profile .desc { display: inline-block; width: 100%; height: auto; padding: 20px; }
+    #profile .desc label { display: inline-block; width: 100%; height: auto; margin-bottom: 20px; font-size: 14px; cursor: pointer; }
+    #profile .desc label input[type=checkbox] { position: relative; display: inline-block; width: 20px; height: 20px; margin: -2px 5px 0px 0px; border-radius: 3px; border: 1px solid var(--gray); vertical-align: middle; }
+    #profile .desc label input:checked { background-color: var(--gray); }
+    #profile .desc label input:checked::after { position: absolute; top: 50%; left: 50%; width: 5px; height: 5px; background-color: #fff; transform: translate(-50%, -50%); content: ''; }
+    #profile .desc p { display: block; font-size: 13px; color: var(--gray); line-height: 1.4; }
+    #profile .areas { display: inline-block; width: 100%; height: auto; padding: 20px; }
+    #profile .areas nav li { display: inline-block; width: auto; margin: 0px 10px 10px 0px; padding: 10px 15px; background-color: var(--egg); color: var(--brown); border-radius: 3px; font-size: 12px; }
+    #profile .servico { display: inline-block; width: 100%; height: auto; padding: 20px 20px 0px 20px; }
+    #profile .servico header { position: relative; display: inline-block; width: 100%; height: auto; cursor: pointer; }
+    #profile .servico header i { position: absolute; top: 0px; right: 20px; font-size: 24px; transform: rotate(180deg); transition: all .5s ease; }
+    #profile .servico header.on i { transform: rotate(0deg); }
+    #profile .servico article { position: relative; display: inline-block; width: 100%; height: auto; margin: 10px 0px 20px 0px; }
+    #profile .servico article.agendado figcaption em { color: #CCBF00; }
+    #profile .servico article.concluido figcaption em { color: #00909B; }
+    #profile .servico article.concluido-pendente figcaption em { color: #009B1F; }
+    #profile .servico article img { float: left; width: 34px; height: auto; }
+    #profile .servico article figcaption { position: relative; float: left; width: calc(100% - 34px); height: auto; padding-left: 20px; }
+    #profile .servico article figcaption h2 { display: block; font-weight: 600; }
+    #profile .servico article figcaption span { display: block; margin-top: 10px; font-size: 12px; }
+    #profile .servico article figcaption span em { font-weight: 500; font-style: normal; }
+    #profile .servico article figcaption i { position: absolute; top: 50%; right: 22px; font-size: 24px; cursor: pointer; }
+    #profile .review  { display: inline-block; width: 100%; height: auto; padding: 20px; }
+    #profile .review section article { display: inline-block; width: 100%; height: auto; margin-top: 10px; }
+    #profile .review section article figure img { float: left; width: 40px; height: 40px; border: 2px solid var(--black); border-radius: 100%; object-fit: cover; }
+    #profile .review section article figcaption { position: relative; float: left; width: calc(100% - 40px); padding-left: 20px; }
+    #profile .review section article figcaption h6 { display: block; font-weight: 600; }
+    #profile .review section article figcaption p { display: block; margin: 7px 0px; font-size: 12px; }
+    #profile .review section article figcaption em { display: block; font-style: normal; font-size: 12px; }
+    #profile .review section article figcaption span.right { position: absolute; top: 0px; right: 0px; }

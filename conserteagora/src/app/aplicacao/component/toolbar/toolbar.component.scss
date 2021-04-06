@@ -1,0 +1,39 @@
+.header{
+  width: auto;
+  height: 100px;
+  background-color: white;
+  font-size: medium;
+
+}
+.sociais{
+  margin-left: 78%;
+
+}
+
+.sociais i{
+  padding-left: 15px;
+}
+
+.escrito{
+  font-weight: 600;
+}
+
+.header form { position: absolute; top: 5%; left: 50%; width: calc(100% - 700px); height: auto; transform: translate(-50%, -50%); }
+.header form input { display: inline-block; width: 100%; height: 50px; padding: 0px 20px 0px 50px; background-color: var(--lightgray); border-radius: 8px; color: var(--gray); font-size: 14px; }
+.header form input::placeholder { color: var(--gray); ; }
+.header form i { position: absolute; top: 50%; left: 20px; transform: translateY(-50%); }
+
+
+@media only screen and (max-width: 450px) {
+  #footer{
+    display: none;
+  }
+  .form1{
+    display: none;
+  }
+  .sociais{
+    margin-left: 30px;
+
+  }
+
+}

@@ -1,0 +1,69 @@
+<div class="container-cadastro">
+    <main id="wrapper">
+
+        <header id="header" class="block">
+            <span class="logo"><img src="assets/img/logo.svg" /></span>
+        </header>
+
+        <section>
+            <header>
+                <strong>Esqueceu sua senha?</strong>
+                <p>Para cadastrar um nova senha informe os campos abaixo.</p>
+                <nav>
+                    <ul>
+                        <li [ngClass]="{'on': view === 1}"><a title="Profissional">Acesso</a></li>
+                        <li [ngClass]="{'on': view === 3}"><a title="Profissional">Nova Senha</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <article *ngIf="view === 1">
+                <form>
+                    <fieldset>
+                        <label>
+                            <strong>Login/E-mail</strong>
+                            <input id="idEmailUsuario" name="emailUsuario" type="text"
+                                [(ngModel)]="usuario.txt_email" />
+                        </label>
+                        <label>
+                            <strong>Telefone</strong>
+                            <input id="idTelefoneUsuario" name="telefoneUsuario" type="text"
+                                [(ngModel)]="usuario.txt_telefone" />
+                        </label>
+                        <label>
+                            <input type="submit" value="Validar dados" (click)="validarCadastro()" />
+                        </label>
+                    </fieldset>
+                </form>
+            </article>
+
+            <article *ngIf="view === 2">
+                <form>
+                    <fieldset>
+                        <label>
+                            <strong>Senha</strong>
+                            <input id="idSenhaUsuario" name="confirmarSenhaUsuario" type="password"
+                                [(ngModel)]="usuario.txt_senha" />
+                        </label>
+                        <label>
+                            <strong>Confirma senha</strong>
+                            <input id="idConfirmarSenhaUsuario" name="confirmarSenhaUsuario" type="password"
+                                [(ngModel)]="usuario.confirmarSenha" />
+                        </label>
+                        <label>
+                            <input type="submit" value="Cadastrar nova senha" (click)="confirmarNovaSenha()" />
+                        </label>
+                    </fieldset>
+                </form>
+            </article>
+
+        </section>
+        <footer>
+            <span>
+                <a href="/login" title="Não possui cadastro? Clique aqui.">
+                    Já possui cadastro? Clique aqui.
+                </a>
+            </span>
+        </footer>
+    </main>
+</div>

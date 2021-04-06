@@ -1,0 +1,17 @@
+<ng-container *ngIf="userAuthenticated()">
+    <p-sidebar [(visible)]="display">
+        <p-panelMenu #menu [model]="itemsMenu" [style]="{'margin-top':'30px'}" ></p-panelMenu>
+    </p-sidebar>
+    <header id="header" class="block">
+        <span class="toggle" (click)="display = true" ><b></b></span>
+        <div class="right">
+            <span><a href="" title="Notificações"><i class="fas fa-bell"></i></a></span>
+            <figure>
+                <a (click)="menuPerfil.toggle($event)">
+                    <img src="assets/img/_temp/1.jpg" alt="Bill Gates" />
+                </a>
+            </figure>
+            <p-tieredMenu #menuPerfil [model]="itemsPerfil" [popup]="true"></p-tieredMenu>
+        </div>
+    </header>
+</ng-container>

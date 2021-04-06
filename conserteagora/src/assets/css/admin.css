@@ -1,0 +1,62 @@
+/* base */
+body { background-color: var(--lightblue); }
+body.login { background-color: #fff; }
+
+/* header */
+#header { position: relative; height: 86px; }
+#header span.toggle { position: absolute; top: 50%; left: 20px; width: 42px; height: 42px; background-color: #fff; border-radius: 12px; box-shadow: 0px 3px 6px rgba(0,0,0,.1); transform: translateY(-50%); cursor: pointer; transition: all .5s ease; }
+#header span.toggle b { position: absolute; top: 50%; left: 50%; width: 20px; height: 20px; border-top: 3px solid var(--black); transform: translate(-50%, -50%); transition: all .5s ease; }
+#header span.toggle b::before { position: absolute; top: 4px; left: 0px; width: 100%; height: 3px; background-color: var(--black); transition: all .5s ease; content: ''; }
+#header span.toggle b::after { position: absolute; top: 11px; left: 0px; width: 80%; height: 3px; background-color: var(--black); transition: all .5s ease; content: ''; }
+#header span.toggle.on { background-color: var(--egg); }
+#header span.toggle.on b { border-top-color: transparent; }
+#header span.toggle.on b::before { top: 4px; transform: rotate(45deg); }
+#header span.toggle.on b::after { top: 4px; width: 100%; transform: rotate(-45deg); }
+#header form { position: absolute; top: 50%; left: 50%; width: calc(100% - 560px); height: auto; transform: translate(-50%, -50%); }
+#header form input { display: inline-block; width: 100%; height: 50px; padding: 0px 20px 0px 50px; background-color: #fff; box-shadow: 0px 10px 20px rgba(0,0,0,.1); border-radius: 5px; color: var(--gray); font-size: 14px; }
+#header form input::placeholder { color: var(--gray); }
+#header form i { position: absolute; top: 50%; left: 20px; transform: translateY(-50%); } 
+#header .right { float: right; width: auto; margin: 12px 20px 0px 0px; }
+#header .right span, #header .right figure { display: inline-block; width: auto; vertical-align: middle; }
+#header .right span a { margin-right: 20px; font-size: 24px; color: var(--black); }
+#header .right figure img { display: block; width: 60px; height: 60px; border-radius: 100%; border: 3px solid #fff; object-fit: cover; }
+
+/* results */
+#results { padding: 20px; }
+#results section { display: grid; grid-template-columns: 1fr 1fr 1fr; grid-gap: 20px; }
+#results section article { display: block; height: 215px; padding: 30px; background-color: #fff; box-shadow: 0px 10px 20px rgba(0,0,0,.1); border-radius: 10px; }
+#results section article strong { display: block; font-size: 22px; }
+#results section article p { display: block; margin-top: 5px; font-size: 10px; text-transform: uppercase; }
+
+/* profissionais */
+#profissionais { padding: 20px; }
+#profissionais section { display: inline-block; width: 100%; height: auto; overflow-x: auto; white-space: nowrap; }
+#profissionais section article { position: relative; display: inline-block; width: 290px; height: 140px; padding: 20px; background-color: var(--black); border-radius: 10px; }
+#profissionais section article strong { display: block; font-weight: bold; font-size: 54px; color: #fff; }
+#profissionais section article p { display: block; width: 40%; height: auto; margin-top: 10px; color: #fff; line-height: 1.4; white-space: normal; }
+#profissionais section article i { position: absolute; top: 50%; right: 20px; transform: translateY(-50%); font-size: 72px; color: #fff; }
+
+    /* profissionais -> list */
+    #profissionais-list { padding: 20px; }
+    #profissionais-list section {  display: grid; grid-template-columns: 1fr 1fr; grid-gap: 20px; }
+    #profissionais-list section article { display: block; padding: 20px 20px 20px 0px; background-color: #fff; box-shadow: 0px 10px 20px rgba(0,0,0,.1); border-radius: 10px; }
+    #profissionais-list section article span { float: left; width: 50%; height: auto; padding-left: 20px; }
+    #profissionais-list section article span b { display: block; margin-bottom: 7px; font-weight: 600; text-transform: uppercase; font-size: 12px; }
+    #profissionais-list section article span a { display: block; color: var(--black); }
+    #profissionais-list section article span strong { display: block; margin-bottom: 10px; text-transform: uppercase; }
+
+/* billing */
+#billing { padding: 20px; }
+#billing section { display: grid; grid-template-columns: 1fr 1fr; grid-gap: 20px; }
+#billing section article { position: relative; display: block; padding: 30px 30px 80px 30px; background-color: #fff; box-shadow: 0px 10px 20px rgba(0,0,0,.1); border-radius: 10px; }
+#billing section article h6 { display: block; text-transform: uppercase; }
+#billing section article h6::after { display: block; width: 30px; height: 1px; margin: 10px 0px 20px 0px; background-color: var(--black); content: ''; }
+#billing section article input { display: inline-block; width: 100%; height: 50px; padding: 0px 10px; background-color: var(--lightgray); color: var(--gray); line-height: 50px; font-size: 13px; }
+#billing section article input::placeholder { color: var(--gray); }
+#billing section article span.item { position: relative; display: inline-block; width: 100%; height: auto; padding: 20px 0px; border-bottom: 1px solid var(--lightgray); }
+#billing section article span.item span.left { float: left; width: 60%; padding-left: 20px; }
+#billing section article span.item span.left::before { position: absolute; top: 50%; left: 0px; width: 10px; height: 10px; background-color: var(--gray); border-radius: 100%; transform: translateY(-50%); content: ''; }
+#billing section article.pagar span.item span.left::before { background-color: var(--red); }
+#billing section article span.item span.right { float: left; width: 40%; text-align: right; }
+#billing section article span.item span abbr { display: block; margin-top: 5px; font-size: 13px; color: var(--gray); text-decoration: none; }
+#billing section article footer strong { position: absolute; bottom: 30px; right: 30px; font-weight: bold; font-size: 24px; }

@@ -1,0 +1,73 @@
+
+<header id="header" class="block">
+    <span class="logo"><img src="assets/img/logo.svg" /></span>
+    <form action=".">
+        <fieldset>
+            <input type="search" placeholder="Procure por serviços" />
+        </fieldset>
+        <i class="far fa-search"></i>
+    </form>
+    <nav>
+        <strong>Sigam nossas redes sociais</strong>
+        <ul>
+            <li><a href="" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a></li>
+        </ul>
+    </nav>
+</header>
+<!-- /#header.block -->
+
+<div id="service-add" class="block">
+    <header>
+        <strong>Cadastrar Serviço</strong>
+    </header>
+    <section>
+        <form action=".">
+            <fieldset>
+                <label class="lb40">
+                    <strong>Serviço</strong>
+                    <!-- <input type="text" /> -->
+                    <p-dropdown id="idRegistroServico" name="registroServico" appendTo="body" [options]="listaServico"
+                        [(ngModel)]="registro.servico" optionLabel="label" optionValue="value"
+                        (onChange)="buscarTaxa($event)">
+                    </p-dropdown>
+                </label>
+                <label class="lb40">
+                    <strong>Preço do serviço</strong>
+                    <p-inputNumber id="idRegistroPreco" name="registroPreco" mode="currency"
+                        currency="BRL" locale="pt-BR" [(ngModel)]="registro.taxa.valor" type="text">
+                    </p-inputNumber>
+                </label>
+                <label class="lb20">
+                    <strong>Por</strong>
+                    <input id="idRegistroPeriodo" name="RegistroPeriodo" type="text" />
+                </label>
+                <label class="lb50">
+                    <strong>Título do Serviço</strong>
+                    <input id="idRegistroTitulo" name="RegistroTitulo" type="text" />
+                </label>
+                <label class="lb50">
+                    <strong>Descrição do Serviço</strong>
+                    <input type="text" id="idRegistroDescricao" name="RegistroDescricao"
+                        [(ngModel)]="registro.descricao" />
+                </label>
+                <label class="lb50">
+                    <strong>Prazo de conclusão do servico</strong>
+                    <p-inputNumber id="idRegistroPrazo" name="RegistroPrazo" [(ngModel)]="registro.prazo"
+                        suffix=" dia(s)"></p-inputNumber>
+                    <i class="fas fa-calendar"></i>
+                </label>
+                <!-- <label class="lb50">
+                    <div class="file">
+                        <em><i class="far fa-paperclip"></i> Anexar Foto</em>
+                        <input type="file">
+                    </div>
+                </label> -->
+                <label class="lb50">
+                    <!--<input type="submit" value="Publicar Serviço" <!--(click)="buscarTaxa()"  -->/>
+                </label>
+            </fieldset>
+        </form>
+    </section>
+</div>

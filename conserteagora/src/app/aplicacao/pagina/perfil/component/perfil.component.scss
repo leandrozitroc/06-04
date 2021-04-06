@@ -1,0 +1,19 @@
+.container-cadastro { background-color: #eee; text-align: center; }
+main#wrapper { display: inline-block; width: 518px; height: auto; margin: 40px auto; padding: 40px; background-color: #fff; border-radius: 20px; text-align: left; }
+main#wrapper span.logo img { display: block; width: 150px; height: auto; margin: 0px auto 30px auto; }
+main#wrapper section header strong { display: block; margin: 15px 0px; font-weight: bold; font-size: 28px; }
+main#wrapper section header p { display: block; margin-bottom: 10px; color: var(--gray); }
+main#wrapper section header ul { display: inline-block; width: 100%; height: auto; margin: 20px 0px; }
+main#wrapper section header ul li { display: inline-block; width: auto; margin-right: 15px; text-transform: uppercase; }
+main#wrapper section header ul li a { display: block; color: var(--black); cursor: pointer;}
+main#wrapper section header ul li.on a { padding-bottom: 5px; font-weight: bold; border-bottom: 3px solid var(--egg); }
+main#wrapper section label { position: relative; float: left; width: 100%; margin-bottom: 10px; background-color: var(--lightgray); } //height: 70px;
+main#wrapper section label.lb50 { width: 50%; }
+main#wrapper section label.lb502 { width: 48%; margin-left: 2%; }
+main#wrapper section label strong { display: block; margin: 10px 0px 0px 10px; font-size: 13px; text-transform: uppercase; }
+main#wrapper section label p { display: block; margin: 10px 0px 10px 10px; }
+main#wrapper section label input[type=text] { display: inline-block; width: 100%; height: 42px; margin-top: 5px; padding: 0px 10px; color: var(--brown); }
+main#wrapper section label input[type=submit] { display: inline-block; width: 100%; height: auto; padding: 15px 0px; background-color: var(--black); color: #fff; border-radius: 5px; font-weight: bold; }
+main#wrapper section label input[type=password] { display: inline-block; width: 100%; height: 42px; margin-top: 5px; padding: 0px 10px; color: var(--brown); }
+main#wrapper section label.no { height: auto; margin: 20px 0px 30px 0px; background-color: transparent; text-align: center; }
+main#wrapper section label.no small a { display: block; color: var(--brown); }

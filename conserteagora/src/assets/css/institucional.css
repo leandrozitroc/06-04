@@ -1,0 +1,63 @@
+/* header */
+#header { height: 100px; padding: 10px 20px; }
+#header span.logo img { float: left; width: 140px; height: auto; }
+#header form { position: absolute; top: 50%; left: 50%; width: calc(100% - 560px); height: auto; transform: translate(-50%, -50%); }
+#header form input { display: inline-block; width: 100%; height: 50px; padding: 0px 20px 0px 50px; background-color: var(--lightgray); border-radius: 5px; color: var(--gray); font-size: 14px; }
+#header form input::placeholder { color: var(--gray); }
+#header form i { position: absolute; top: 50%; left: 20px; transform: translateY(-50%); } 
+#header nav { float: right; width: auto; margin-top: 25px; }
+#header nav strong { float: left; width: 120px; }
+#header nav ul { float: left; width: auto; }
+#header nav ul li { float: left; width: auto; margin-left: 5px; }
+#header nav ul li a { display: block; width: 30px; height: 30px; border-radius: 100%; background-color: var(--black); color: #fff; line-height: 30px; text-align: center; }
+#header nav ul li a:hover { background-color: var(--egg); }
+
+/* feat */
+#feat { height: 400px; background-color: var(--black); }
+
+/* services */
+#services { margin-bottom: 20px; text-align: center; }
+#services nav { display: inline-block; width: 650px; height: auto; margin-top: -70px; }
+#services nav ul { display: grid; grid-template-columns: 1fr 1fr 1fr; grid-gap: 10px; }
+#services nav ul li a { display: inline-block; width: 200px; height: 180px; border-radius: 5px; background-color: #fff; color: var(--gray); line-height: 1.2; box-shadow: 0px 3px 6px rgba(0,0,0,.2); }
+#services nav ul li a img { display: block; width: 75px; height: auto; margin: 25px auto 18px auto; }
+#services nav ul li a:hover { background-color: var(--egg); color: var(--black); }
+
+    /* services -> list */
+    #services-list { padding: 20px; }
+    #services-list header strong { display: block; margin-bottom: 20px; font-weight: bold; font-size: 48px; line-height: 1.2; }
+    #services-list section { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr; grid-gap: 20px; }
+    #services-list section article { display: inline-block; width: 100%; height: auto; box-shadow: 0px 10px 30px rgba(0,0,0,.1); }
+    #services-list section article figure { position: relative; display: inline-block; width: 100%; height: 182px; }
+    #services-list section article figure img { position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; }
+    #services-list section article figcaption { position: relative; display: inline-block; width: 100%; height: 200px; padding: 20px 40px 0px 40px; text-align: center; }
+    #services-list section article figcaption small { display: block; margin: 20px 0px 12px 0px; font-weight: 500; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--blue); }
+    #services-list section article figcaption strong { display: block; font-weight: bold; font-size: 20px; color: var(--blue); line-height: 1.2; }
+    #services-list section article figcaption span a { position: absolute; bottom: 0px; left: 0px; width: 100%; height: 40px; background-color: var(--red); color: #fff; line-height: 40px; font-weight: 500; font-size: 14px; }
+    #services-list section article figcaption span a:hover { background-color: var(--brown); }
+
+    /* service -> add */
+    #service-add { margin-bottom: 70px; padding: 60px 20px 20px 20px; border-top: 1px solid var(--lightgray); }
+    #service-add header strong { display: block; margin-bottom: 20px; font-weight: bold; font-size: 48px; line-height: 1.2; }
+    #service-add form { display: inline-block; width: 100%; height: auto; }
+    #service-add form label { position: relative; float: left; width: calc(100% - 7px); height: 70px; margin: 0px 7px 10px 0px; background-color: var(--lightgray); }
+    #service-add form label.lb20 { width: calc(20% - 7px); }
+    #service-add form label.lb40 { width: calc(40% - 7px); }
+    #service-add form label.lb50 { width: calc(50% - 7px); }
+    #service-add form label strong { display: block; margin: 10px 0px 0px 10px; font-size: 13px; text-transform: uppercase; }
+    #service-add form label input { display: inline-block; width: 100%; height: 42px; margin-top: 5px; padding: 0px 10px; color: var(--brown); }
+    #service-add form label .file { position: relative; float: left; width: 50%; height: auto; }
+    #service-add form label .file em { float: left; width: 100%; height: 70px; line-height: 70px; background-color: var(--brown); color: #fff; text-align: center; font-style: normal; cursor: pointer; }
+    #service-add form label .file input { position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; opacity: 0; }
+    #service-add form label input[type=submit] { float: left; width: 100%; height: 70px; background-color: var(--black); color: #fff; }
+    #service-add form label .fa-calendar { position: absolute; top: 50%; right: 20px; transform: translateY(-50%); font-size: 20px; }
+
+/* who */
+#who { margin: 60px 0px; padding: 60px 0px; background-color: var(--black); text-align: center; }
+#who section { display: inline-block; width: 760px; height: auto; }
+#who section h6 { display: block; font-weight: bold; font-size: 46px; color: #fff; }
+#who section p { display: block; margin: 30px 0px; padding: 0px 160px; font-size: 18px; color: #fff; line-height: 1.6; }
+#who section span a { display: inline-block; width: auto; padding: 15px 200px; border-radius: 5px; background-color: var(--egg); color: var(--black); }
+
+/* footer */
+#footer { margin-bottom: 60px; text-align: center; }

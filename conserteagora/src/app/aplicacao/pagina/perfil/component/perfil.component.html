@@ -1,0 +1,98 @@
+<div class="container-cadastro">
+    <main id="wrapper">
+
+        <header id="header" class="block">
+            <span class="logo"><img src="assets/img/logo.svg" /></span>
+        </header>
+
+        <section>
+            <header>
+                <strong>Perfil</strong>
+                <nav>
+                    <ul>
+                        <li [ngClass]="{'on': view === 1}"><a title="Profissional" (click)="viewAlterarDados()">Dados</a></li>
+                        <li [ngClass]="{'on': view === 2}"><a title="Profissional" (click)="viewTrocarSenha()">Senha</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <article *ngIf="view === 1">
+                <form>
+                    <fieldset>
+                        <label>
+                            <strong>Nome completo</strong>
+                            <input id="idNomeUsuario" name="nomeUsuario" type="text" [(ngModel)]="showCliente.txt_nome" />
+                        </label>
+                        <label>
+                            <strong>Data de nascimento</strong>
+                            <p-calendar id="dtNomeUsuario" name="dtNomeUsuario" type="text"
+                                dateFormat="dd/mm/yy" [(ngModel)]="showCliente.dt_nascimento">
+                            </p-calendar>
+                        </label>
+                        <label>
+                            <strong>CPF</strong>
+                            <p-inputMask id="cpfNomeUsuario" name="cpfNomeUsuario" type="text"
+                                unmask="true" mask="999.999.999-99" [(ngModel)]="showCliente.txt_cpf" >
+                            </p-inputMask>
+                        </label>
+                        <label>
+                            <strong>Endereço</strong>
+                            <input id="idEnderecoUsuario" name="enderecoUsuario" type="text"
+                                [(ngModel)]="showCliente.txt_endereco" />
+                        </label>
+                        <label>
+                            <strong>Telefone</strong>
+                            <p-inputMask id="idTelefoneUsuario" name="telefoneUsuario" type="text"
+                                unmask="true" mask="(99) 99999-9999" [(ngModel)]="showCliente.txt_telefone">
+                            </p-inputMask>
+                        </label>
+                        <label>
+                            <strong>Login/E-mail</strong>
+                            <input id="idEmailUsuario" name="emailUsuario" type="text"
+                                [(ngModel)]="showCliente.txt_email" />
+                        </label>
+                        <ng-container *ngIf="usuario.id_permissao === 1">
+                            <label class="no">
+                                <small>
+                                    <a href="" title="Adicionar formas de pagamento">
+                                        + Adicionar formas de pagamento
+                                    </a>
+                                </small>
+                            </label>
+                        </ng-container>
+                        <label>
+                            <input type="submit" value="Alterar dados" (click)="alterarCadastro()" />
+                        </label>
+                    </fieldset>
+                </form>
+            </article>
+
+            <article *ngIf="view === 2">
+                <form>
+                    <fieldset>
+                        <label>
+                            <strong>Senha</strong>
+                            <input id="idSenhaUsuario" name="senha" type="password"
+                                [(ngModel)]="usuario.txt_senha" />
+                        </label>
+                        <label>
+                            <strong>Nova senha</strong>
+                            <input id="idNovaSenhaUsuario" name="novaSenha" type="password"
+                                [(ngModel)]="usuario.novaSenha" />
+                        </label>
+                        <label>
+                            <strong>Confirma senha</strong>
+                            <input id="idConfirmarSenhaUsuario" name="confirmarSenhaUsuario" type="password"
+                                [(ngModel)]="usuario.confirmarSenha" />
+                        </label>
+                        <label>
+                            <input type="submit" value="Confirmar" (click)="alterarSenha()" />
+                        </label>
+                    </fieldset>
+                </form>
+            </article>
+
+        </section>
+
+    </main>
+</div>
