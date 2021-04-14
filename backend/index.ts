@@ -1,3 +1,5 @@
+import * as dotenv from 'dotenv';
+dotenv.config({path: process.env.NODE_ENV === 'test' ? '.env.test': '.env'})
 import * as bodyParser from "body-parser";
 import * as express from "express";
 
@@ -9,7 +11,7 @@ import Usuario from './routes/usuario'
 
 import AdminLogin from "./routes/Admin"
 import usuario from "./routes/usuario";
-const app = express();
+export const app = express();
 app.use(require("cors")());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));

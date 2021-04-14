@@ -37,22 +37,26 @@ function formatDate(date) {
                 
                 knex
                 .insert({permissao_id:dados.id_permissao}).into('tbl_usuario_permissao').then(data=>{
+                    res.status(200)
+                    res.json({message:'Conta Criada com Sucesso', })  
+                    console.log(data)
                 
-                
-                console.log(data)
+                    
                 
                     
                 
                     
                 }).catch(error=>{
                     console.log(error)
+                    res.status(403)
+                    res.json({error:error})
                 })
                
 
            }).catch(error=>{
                console.log(error)
                res.status(403)
-               res.json({Error:error})
+               res.json({error:error})
            
 
            })
@@ -60,15 +64,18 @@ function formatDate(date) {
            if (dados.tipoAcesso == 2){
             knex.insert({txt_email:dados.txt_email, txt_endereco:dados.txt_endereco, txt_nome:dados.txt_nome, txt_telefone:dados.txt_telefone}).into('tbl_profissional')
             .then(data=>{
-                console.log(data)
                 res.status(200)
-                res.json({CreateAccount:'aceito'})
+                res.json({message:'Conta Criada com Sucesso', })  
+                console.log(data)
+                
             }).catch(error=>{
                 console.log(error)
+                res.json({error: error})
             })
         
             }    
-       }
+       }     
+           
    }
 }
 

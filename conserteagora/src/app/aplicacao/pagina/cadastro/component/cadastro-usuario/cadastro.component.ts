@@ -71,12 +71,15 @@ export class CadastroComponent implements OnInit {
         next: result => {
           let jwt: JwtResponse = result.entity;
           this.messageService.add({ severity: Severity.SUCCESS, summary: Summary.SUCCESS, detail: "Cadastrado com sucesso" })
-          this.storageService.saveUser(jwt.login, jwt.token, jwt.authorities);
-          this.router.navigate([jwt.rota]);
+          //this.storageService.saveUser(jwt.login, jwt.token, jwt.authorities);
+          this.router.navigate(['/login']);
         }, error: erro => {
-          console.log(erro);
-          this.messageService.add({ severity: Severity.ERROR, summary: Summary.ERROR, detail: erro.error.message })
+
+          this.messageService.add({ severity: Severity.ERROR, summary: Summary.ERROR, detail: erro.error })
+          this.router.navigate(['/login']);
         }, complete: () => {
+
+          this.router.navigate(['/login']);
         }
       });
     }

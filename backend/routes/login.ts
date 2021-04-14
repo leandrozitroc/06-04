@@ -38,17 +38,17 @@ class Login{
                         res.status(400)
                         res.json({error: "falha ao gerar Token"})   
                     }
-                    console.log('Login Aceito')
+                    
                     res.status(200)
                     
                     
                     res.json({token: token, login:query1[0].txt_email, authorities: authorities1(authorities2[0].permissao_id) ,
-                         rota: `/${authorities3}`})
+                         rota: `/${authorities3}`, message: 'Login Aceito'})
                 })
                     
                 
             } else {
-                console.log('Senha invalida')
+                
                 res.status(403)
                 res.json({error: 'Senha Invalida'})
               
@@ -56,7 +56,7 @@ class Login{
             }    
 
        } else {
-           console.log('Email invalido ou nao encontrado')
+           
            res.status(400)
            res.json({error:'Email Invalido'})
            

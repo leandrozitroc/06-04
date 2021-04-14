@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MessageService, SelectItem } from 'primeng/api';
 import { Severity, Summary } from 'src/app/aplicacao/model/Message';
 import { Servico } from 'src/app/aplicacao/model/Servico';
@@ -15,11 +16,11 @@ import { ServicoCliente } from '../../model/ServicoCliente';
 })
 export class CadastrarServicoComponent implements OnInit {
 
-  public registro: ServicoCliente = new ServicoCliente();
+  public registro
 
   public listaServico: SelectItem[] = [];
 
-  constructor(private servicoService: ServicoService, private taxaServico: TaxaService, private messageService: MessageService) { }
+  constructor(private servicoService: ServicoService, private taxaServico: TaxaService, private messageService: MessageService, private router: Router) { }
 
   ngOnInit(): void {
     this.servicoService.buscarTodos().subscribe({
@@ -44,7 +45,21 @@ export class CadastrarServicoComponent implements OnInit {
       });
     }
   }
+  cadastrar(){
+    this.servicoService.cadastrar(this.registro).subscribe({
+      next: ()=>{
+        this.messageService.add({ severity: Severity.SUCCESS, summary: Summary.SUCCESS, detail: "Cadastrado com sucesso" })
+        this.router.navigate(['/login']);
+      }, error: (erro)=>{
+        this.messageService.add({ severity: Severity.ERROR, summary: Summary.ERROR, detail: erro.error })
+        this.router.navigate(['/servico/consultar'])
+      }, complete: ()=>{
+        this.router.navigate(['/servico/consultar']);
+      }
 
+      })
+
+    }
   // public buscarTaxa() {
   //   if ((this.registro.taxa.servico === null || this.registro.taxa.servico === undefined)
   //     || this.registro.servico.id !== this.registro.taxa.servico.id) {

@@ -9,6 +9,7 @@ export class Servico {
     nome: string = '';
     descricao: string = '';
     grupo: Grupo;
+    prazo: Number
 
     public constructor(init?: Partial<Servico>) {
         Object.assign(this, init);
